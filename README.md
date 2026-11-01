@@ -26,19 +26,19 @@ The implementation uses SAM's automatic mask generation, followed by geometric f
 
 
 
-\- **Dataset:** Egg â€“ Version 1
+- **Dataset:** Egg â€“ Version 1
 
-\- **Source:** [Roboflow Universe â€“ Egg Dataset](https://universe.roboflow.com/fire-bf7qe/egg-vzhtr)
+- **Source:** [Roboflow Universe â€“ Egg Dataset](https://universe.roboflow.com/fire-bf7qe/egg-vzhtr)
 
-\- **Provider:** A Roboflow user
+- **Provider:** A Roboflow user
 
-\- **License:** CC BY 4.0
+- **License:** CC BY 4.0
 
-\- **Number of images:** 110
+- **Number of images:** 110
 
-\- **Image dimensions:** 640 Ã— 640 pixels
+- **Image dimensions:** 640 Ã— 640 pixels
 
-\- **Export date:** 23 May 2025
+- **Export date:** 23 May 2025
 
 
 
@@ -90,13 +90,13 @@ Candidate masks are evaluated using geometric and model-generated properties:
 
 
 
-\- Area ratio
+- Area ratio
 
-\- Bounding-box aspect ratio
+- Bounding-box aspect ratio
 
-\- Bounding-box fill ratio
+- Bounding-box fill ratio
 
-\- Stability score
+- Stability score
 
 
 
@@ -144,13 +144,13 @@ Interactive positive and negative point prompts were therefore used with SAM's p
 
 
 
-\- **Image 10:** Candidate 3 was selected after reviewing the generated alternatives.
+- **Image 10:** Candidate 3 was selected after reviewing the generated alternatives.
 
-\- **Image 117:** Candidate 2 was selected after reviewing the generated alternatives.
+- **Image 117:** Candidate 2 was selected after reviewing the generated alternatives.
 
 
 
-The resulting binary masks and overlays are stored separately under `results/manual\_fallback\_masks/`.
+The resulting binary masks and overlays are stored separately under `results/manual_fallback_masks/`.
 
 
 
@@ -230,7 +230,7 @@ The following examples show selected automatic segmentation overlays.
 
 
 
-![Training image 103](results/examples/train\_103\_multiple\_eggs.png)
+![Training image 103](results/examples/train_103_multiple_eggs.png)
 
 
 
@@ -238,7 +238,7 @@ The following examples show selected automatic segmentation overlays.
 
 
 
-![Training image 105](results/examples/train\_105\_multiple\_eggs.png)
+![Training image 105](results/examples/train_105_multiple_eggs.png)
 
 
 
@@ -246,7 +246,7 @@ The following examples show selected automatic segmentation overlays.
 
 
 
-![Validation image 115](results/examples/valid\_115\_two\_eggs.png)
+![Validation image 115](results/examples/valid_115_two_eggs.png)
 
 
 
@@ -254,7 +254,7 @@ The following examples show selected automatic segmentation overlays.
 
 
 
-![Test image 1](results/examples/test\_1\_egg\_in\_hand.png)
+![Test image 1](results/examples/test_1_egg_in_hand.png)
 
 
 
@@ -266,9 +266,9 @@ The point-prompted masks and corresponding overlays for Images 10 and 117 are av
 
 
 
-\- `results/manual\_fallback\_masks/Image\_10/`
+- `results/manual_fallback_masks/Image_10/`
 
-\- `results/manual\_fallback\_masks/Image\_117/`
+- `results/manual_fallback_masks/Image_117/`
 
 
 
@@ -288,17 +288,17 @@ The following limitations apply:
 
 
 
-1\. The dataset does not provide independent pixel-level ground-truth masks.
+1. The dataset does not provide independent pixel-level ground-truth masks.
 
-2\. Therefore, IoU, Dice coefficient and pixel-level segmentation accuracy are not reported.
+2. Therefore, IoU, Dice coefficient and pixel-level segmentation accuracy are not reported.
 
-3\. Automatic geometric filtering can reject valid masks or fail on heavily occluded objects.
+3. Automatic geometric filtering can reject valid masks or fail on heavily occluded objects.
 
-4\. Images 10 and 117 required interactive point prompts.
+4. Images 10 and 117 required interactive point prompts.
 
-5\. Image 124 remains unresolved.
+5. Image 124 remains unresolved.
 
-6\. The results are based on a pretrained zero-shot segmentation model and heuristic candidate selection, not a fine-tuned egg segmentation network.
+6. The results are based on a pretrained zero-shot segmentation model and heuristic candidate selection, not a fine-tuned egg segmentation network.
 
 
 
@@ -326,21 +326,21 @@ submission/
 
 â”œâ”€â”€ src/
 
-â”‚   â”œâ”€â”€ generate\_sam\_candidates.py
+â”‚   â”œâ”€â”€ generate_sam_candidates.py
 
-â”‚   â”œâ”€â”€ analyse\_egg\_candidates.py
+â”‚   â”œâ”€â”€ analyse_egg_candidates.py
 
-â”‚   â”œâ”€â”€ process\_all\_sam\_selections\_v3.py
+â”‚   â”œâ”€â”€ process_all_sam_selections_v3.py
 
-â”‚   â”œâ”€â”€ point\_prompt\_review\_10\_positive\_negative.py
+â”‚   â”œâ”€â”€ point_prompt_review_10_positive_negative.py
 
-â”‚   â””â”€â”€ point\_prompt\_review\_117\_positive\_negative.py
+â”‚   â””â”€â”€ point_prompt_review_117_positive_negative.py
 
 â”‚
 
 â”œâ”€â”€ checkpoints/
 
-â”‚   â””â”€â”€ sam\_vit\_b\_01ec64.pth  (download separately)
+â”‚   â””â”€â”€ sam_vit_b_01ec64.pth  (download separately)
 
 â”‚
 
@@ -362,17 +362,17 @@ submission/
 
 â””â”€â”€ results/
 
-&#x20;   â”œâ”€â”€ automatic\_sam\_candidates/
+&#x20;   â”œâ”€â”€ automatic_sam_candidates/
 
-&#x20;   â”œâ”€â”€ candidate\_geometry\_analysis.csv
+&#x20;   â”œâ”€â”€ candidate_geometry_analysis.csv
 
-&#x20;   â”œâ”€â”€ final\_sam\_selection\_v3\_all\_110/
+&#x20;   â”œâ”€â”€ final_sam_selection_v3_all_110/
 
-&#x20;   â”œâ”€â”€ manual\_fallback\_masks/
+&#x20;   â”œâ”€â”€ manual_fallback_masks/
 
-&#x20;   â”‚   â”œâ”€â”€ Image\_10/
+&#x20;   â”‚   â”œâ”€â”€ Image_10/
 
-&#x20;   â”‚   â””â”€â”€ Image\_117/
+&#x20;   â”‚   â””â”€â”€ Image_117/
 
 &#x20;   â””â”€â”€ examples/
 
@@ -388,21 +388,21 @@ submission/
 
 
 
-\- Python 3.11
+- Python 3.11
 
-\- PyTorch
+- PyTorch
 
-\- Torchvision
+- Torchvision
 
-\- Segment Anything
+- Segment Anything
 
-\- OpenCV
+- OpenCV
 
-\- NumPy
+- NumPy
 
-\- Pandas
+- Pandas
 
-\- Matplotlib
+- Matplotlib
 
 
 
@@ -482,7 +482,7 @@ Download the official SAM ViT-B checkpoint:
 
 
 
-[Download sam\_vit\_b\_01ec64.pth](https://dl.fbaipublicfiles.com/segment\_anything/sam\_vit\_b\_01ec64.pth)
+[Download sam_vit_b_01ec64.pth](https://dl.fbaipublicfiles.com/segment_anything/sam_vit_b_01ec64.pth)
 
 
 
@@ -492,7 +492,7 @@ Place the downloaded file at:
 
 ```text
 
-checkpoints/sam\_vit\_b\_01ec64.pth
+checkpoints/sam_vit_b_01ec64.pth
 
 ```
 
@@ -508,7 +508,7 @@ Run from the repository root:
 
 ```bash
 
-python src/generate\_sam\_candidates.py
+python src/generate_sam_candidates.py
 
 ```
 
@@ -520,7 +520,7 @@ This generates candidate masks and metadata under:
 
 ```text
 
-results/automatic\_sam\_candidates/
+results/automatic_sam_candidates/
 
 ```
 
@@ -532,7 +532,7 @@ results/automatic\_sam\_candidates/
 
 ```bash
 
-python src/analyse\_egg\_candidates.py
+python src/analyse_egg_candidates.py
 
 ```
 
@@ -544,7 +544,7 @@ The geometric analysis is saved as:
 
 ```text
 
-results/candidate\_geometry\_analysis.csv
+results/candidate_geometry_analysis.csv
 
 ```
 
@@ -556,7 +556,7 @@ results/candidate\_geometry\_analysis.csv
 
 ```bash
 
-python src/process\_all\_sam\_selections\_v3.py
+python src/process_all_sam_selections_v3.py
 
 ```
 
@@ -572,7 +572,7 @@ The outputs are saved under:
 
 ```text
 
-results/final\_sam\_selection\_v3\_all\_110/
+results/final_sam_selection_v3_all_110/
 
 ```
 
@@ -588,7 +588,7 @@ For difficult cases, the point-prompt scripts can be run separately:
 
 ```bash
 
-python src/point\_prompt\_review\_10\_positive\_negative.py
+python src/point_prompt_review_10_positive_negative.py
 
 ```
 
@@ -596,7 +596,7 @@ python src/point\_prompt\_review\_10\_positive\_negative.py
 
 ```bash
 
-python src/point\_prompt\_review\_117\_positive\_negative.py
+python src/point_prompt_review_117_positive_negative.py
 
 ```
 
@@ -626,13 +626,13 @@ The use of AI assistance is disclosed here in accordance with the assignment gui
 
 
 
-\- [Segment Anything â€“ Official GitHub Repository](https://github.com/facebookresearch/segment-anything)
+- [Segment Anything â€“ Official GitHub Repository](https://github.com/facebookresearch/segment-anything)
 
-\- [Segment Anything Research Paper](https://arxiv.org/abs/2304.02643)
+- [Segment Anything Research Paper](https://arxiv.org/abs/2304.02643)
 
-\- [Roboflow Egg Dataset](https://universe.roboflow.com/fire-bf7qe/egg-vzhtr)
+- [Roboflow Egg Dataset](https://universe.roboflow.com/fire-bf7qe/egg-vzhtr)
 
-\- [PyTorch Installation Guide](https://pytorch.org/get-started/locally/)
+- [PyTorch Installation Guide](https://pytorch.org/get-started/locally/)
 
 
 
@@ -641,7 +641,3 @@ The use of AI assistance is disclosed here in accordance with the assignment gui
 
 
 Thanks to the dataset provider for making the egg image dataset available through Roboflow Universe and to Meta AI Research for the pretrained Segment Anything Model.
-
-
-
-
