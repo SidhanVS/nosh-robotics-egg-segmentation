@@ -1,0 +1,16 @@
+# Python virtual environment
+.venv/
+venv/
+
+# Python cache files
+__pycache__/
+*.py[cod]
+
+# SAM model checkpoints
+
+*.pth
+
+# Windows and editor files
+Thumbs.db
+.DS_Store
+.vscode/
